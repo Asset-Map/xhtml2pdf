@@ -315,6 +315,7 @@ class PmlImageReader(object):  # TODO We need a factory here, returning either a
 		self._transparent = None
 		self._data = None
 		imageReaderFlags = 0
+		print fileName
 		print "pre-PILImage"
 		if PILImage and isinstance(fileName, PILImage.Image):
 			print "inPILImage"
@@ -358,7 +359,7 @@ class PmlImageReader(object):  # TODO We need a factory here, returning either a
 						self.jpeg_fh = self._jpeg_fh
 				else:
 					from reportlab.pdfbase.pdfutils import readJPEGInfo
-
+					print 'WTF?'
 					try:
 						self._width, self._height, c = readJPEGInfo(self.fp)
 					except:
